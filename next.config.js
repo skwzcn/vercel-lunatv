@@ -2,7 +2,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const nextConfig = {
-  output: 'standalone',
+  // Vercel 版：移除 output: 'standalone'（Docker 自托管专用）。
+  // standalone 在 Windows 上需要符号链接权限会构建失败，Vercel 也不需要它。
+  // 需要自托管 Docker 时请用上游 MoonTechLab/LunaTV。
   eslint: {
     dirs: ['src'],
   },
